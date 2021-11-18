@@ -83,7 +83,7 @@ app.use(cors());
 app.use(express.json())
 
 
-app.get('/getStat', (req, res) => {
+app.get('/getStat',async (req, res) => {
     scraper(res);
     
 })
