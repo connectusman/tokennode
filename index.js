@@ -10,7 +10,7 @@ async function scraper(res) {
     console.log("********************************\n")
 
             const poolurl = "https://bscscan.com/address/0x07ddae60a99421eb948ae5f299117f8f8fe86a66"
-            const page2 = await axios.post(poolurl)
+            const page2 = await axios.get(poolurl)
             const $2 = cheerio.load(page2.data)
             var price = []
             var symbol = []
@@ -77,7 +77,7 @@ async function scraper(res) {
 
 const express = require('express')
 const app = express();
-var PORT = process.env.PORT;
+var PORT = process.env.PORT|5000;
 const cors = require('cors');
 app.use(cors());
 app.use(express.json())
